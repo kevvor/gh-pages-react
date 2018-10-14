@@ -1,8 +1,7 @@
-
 .bubble {
     background-color: #e3e2e8;
     display: inline-block;
-    margin: .5rem 0 .5rem 1rem;
+    margin: 0rem 0 .5rem 1rem;
     max-width: 75vw;
     border-radius: 15px;
     padding: .5rem 1rem;

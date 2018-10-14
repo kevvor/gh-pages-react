@@ -1,7 +1,13 @@
-.text-bubble-container {
-    /* height: 90vh; */
+.app {
+    /* display: flex;
+    flex-direction: column-reverse; */
 }
 
-#rest-of-app {
-    height: 35vh;
+.text-bubble-container {
+    /* display: flex;
+    flex-direction: column-reverse; */
+}
+
+#divider {
+    height: 90vh;
 }

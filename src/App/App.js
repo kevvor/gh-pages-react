@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TextBubble from '../TextBubble/TextBubble';
+import textTone from '../assets/text-tone.mp3';
 import './App.css';
 
 class App extends Component {
@@ -33,13 +34,21 @@ class App extends Component {
         ]
 
         bubbleTexts.forEach((msg, i) => {
-            const timer = (i + 1) * 1500;
-            setTimeout(() => {
-                const { allTexts } = this.state;
-                const _allTexts = [].concat(allTexts, bubbleTexts[i]);
-                this.setState({ allTexts: _allTexts, currentText: msg });
-                window.scrollTo(0, document.body.scrollHeight);
-            }, timer);
+            try {
+                const timer = (i + 1.3) * 1500;
+                setTimeout(async () => {
+                    const { allTexts } = this.state;
+                    const _allTexts = [].concat(allTexts, bubbleTexts[i]);
+
+
+                    this.setState({ allTexts: _allTexts, currentText: msg });
+                    window.scrollTo(0, document.body.scrollHeight);
+
+                    // this.DOMtextTone.play();
+                }, timer);
+            } catch (error) {
+                console.log(error);
+            }
         });
     }
 
@@ -52,8 +61,8 @@ class App extends Component {
         });
 
         return (
-            <div className="App">
-            <div id="rest-of-app"></div>
+            <div className="app">
+                <div id="divider"></div>
                 {this.state.textVisible ?
                     <div>
                         <div className="text-bubble-container">
@@ -61,6 +70,10 @@ class App extends Component {
                         </div>
                     </div>
                 : null }
+                <audio ref={ (textTone) => { this.DOMtextTone = textTone } }>
+                    <source src={textTone} type="audio/mpeg" >
+                    </source>
+                </audio>
             </div>
         );
     }
