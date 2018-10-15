@@ -3,6 +3,7 @@ import './TextBubble.css';
 
 const TextBubble = (props) => {
     let isHrefBubble = false;
+
     const data = {
         p1: '',
         p2: '',
@@ -13,10 +14,10 @@ const TextBubble = (props) => {
     if (props.message.includes("{{")) {
         const chunks = props.message.split(/\{\{(.*)\}\}/);
 
-        data.p1 = chunks[0];
-        data.p2 = chunks[2];
+        data.p1    = chunks[0];
         data.aText = chunks[1].split('|')[0];
         data.aHref = chunks[1].split('|')[1];
+        data.p2    = chunks[2];
 
         isHrefBubble = true;
     }

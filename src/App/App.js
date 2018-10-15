@@ -28,27 +28,24 @@ class App extends Component {
         const contactMeLink = '<a href="#">contact me</a>';
 
         const bubbleTexts = [
-            // "Hey there! My name is Keano, nice to meet you. \u{1F44B}",
-            // "I'm a web developer based in Vancouver, Canada.",
-            // "I mostly work with front end Javasript frameworks and Node.js, but I love new challenges so don't hesitate to reach about other projects!",
+            "Hey there! My name is Keano, nice to meet you. \u{1F44B}",
+            "I'm a web developer based in Vancouver, Canada.",
+            "I mostly work with front end Javasript frameworks and Node.js, but I love new challenges so don't hesitate to reach about other projects!",
             "You can find some of my {{projects|https://kevvor.github.io/#my-projects}} here.",
             "Or send me an {{email|mailto:keano@voelkl.co?subject=Hey Keano}} to chat with me. \u{1F642}"
         ]
 
-        // mailto:keano@voelkl.co?subject=Hey Keano
-
         bubbleTexts.forEach((msg, i) => {
             try {
-                const timer = (i + 1.3) * 1500;
+                const timer = (i + 1) * 1000 * 2;
                 setTimeout(() => {
                     const { allTexts } = this.state;
                     const _allTexts = [].concat(allTexts, bubbleTexts[i]);
 
-
                     this.DOMtextTone.play();
+
                     this.setState({ allTexts: _allTexts, currentText: msg });
                     window.scrollTo(0, document.body.scrollHeight);
-
                 }, timer);
             } catch (error) {
                 console.log(error);
