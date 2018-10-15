@@ -25,16 +25,17 @@ class App extends Component {
 
     loadTextBubbles = () => {
         const prevWorkLink = '<a href="#">previous work</a>';
-
         const contactMeLink = '<a href="#">contact me</a>';
 
         const bubbleTexts = [
-            "Hey there! My name is Keano, nice to meet you. \u{1F44B}",
-            "I'm a web developer based in Vancouver, Canada.",
-            "I mostly work with front end Javasript frameworks and Node.js, but I love new challenges so don't hesitate to reach about other projects!",
-            "You can find some of my previous work here.",
-            "Or send me an email to chat with me. \u{1F642}"
+            // "Hey there! My name is Keano, nice to meet you. \u{1F44B}",
+            // "I'm a web developer based in Vancouver, Canada.",
+            // "I mostly work with front end Javasript frameworks and Node.js, but I love new challenges so don't hesitate to reach about other projects!",
+            "You can find some of my {{projects|https://kevvor.github.io/#my-projects}} here.",
+            "Or send me an {{email|mailto:keano@voelkl.co?subject=Hey Keano}} to chat with me. \u{1F642}"
         ]
+
+        // mailto:keano@voelkl.co?subject=Hey Keano
 
         bubbleTexts.forEach((msg, i) => {
             try {
