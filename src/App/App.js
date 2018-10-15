@@ -24,27 +24,30 @@ class App extends Component {
     }
 
     loadTextBubbles = () => {
+        const prevWorkLink = '<a href="#">previous work</a>';
+
+        const contactMeLink = '<a href="#">contact me</a>';
+
         const bubbleTexts = [
-            "Hey there! \u{1F44B}",
-            "My name is Keano. Nice to meet you.",
+            "Hey there! My name is Keano, nice to meet you. \u{1F44B}",
             "I'm a web developer based in Vancouver, Canada.",
-            "I mostly work with Javascript and front end web frameworks, but feel free to reach out to me about other projects!",
-            "Have a look at some of my previous work, or contact me to chat with me!",
-            "See ya around \u{1F642}"
+            "I mostly work with front end Javasript frameworks and Node.js, but I love new challenges so don't hesitate to reach about other projects!",
+            "You can find some of my previous work here.",
+            "Or send me an email to chat with me. \u{1F642}"
         ]
 
         bubbleTexts.forEach((msg, i) => {
             try {
                 const timer = (i + 1.3) * 1500;
-                setTimeout(async () => {
+                setTimeout(() => {
                     const { allTexts } = this.state;
                     const _allTexts = [].concat(allTexts, bubbleTexts[i]);
 
 
+                    this.DOMtextTone.play();
                     this.setState({ allTexts: _allTexts, currentText: msg });
                     window.scrollTo(0, document.body.scrollHeight);
 
-                    // this.DOMtextTone.play();
                 }, timer);
             } catch (error) {
                 console.log(error);
@@ -71,8 +74,7 @@ class App extends Component {
                     </div>
                 : null }
                 <audio ref={ (textTone) => { this.DOMtextTone = textTone } }>
-                    <source src={textTone} type="audio/mpeg" >
-                    </source>
+                    <source src={textTone} type="audio/mpeg" ></source>
                 </audio>
             </div>
         );
