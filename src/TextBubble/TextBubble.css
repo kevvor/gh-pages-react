@@ -12,32 +12,3 @@
 .bubble p {
     margin: 0;
 }
-
-.bubble:last-of-type:before {
-/* .bubble:before { */
-    content: "";
-    position: absolute;
-    z-index: -1;
-    bottom: 0px;
-    right: 86%;
-    height: 30px;
-    border-right: 60px solid #e3e2e8;
-    border-bottom-right-radius: 80px 50px;
-    transform: translate(0, -2px) rotate(0deg);
-}
-
-/* creates part of the curved pointy bit */
-.bubble:last-of-type:after {
-/* .bubble:after { */
-    content: "";
-    position: absolute;
-    z-index: -1;
-    bottom: 0px;
-    right: 86%;
-    width: 40px;
-    height: 30px;
-    background: #fff;
-    border-bottom-right-radius: 40px 50px;
-    transform: translate(-30px, -2px) rotate(0deg);
-}
-

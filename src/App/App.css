@@ -4,8 +4,8 @@
 }
 
 .text-bubble-container {
-    /* display: flex;
-    flex-direction: column-reverse; */
+    display: flex;
+    flex-direction: column;
 }
 
 #divider {
