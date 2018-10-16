@@ -9,6 +9,10 @@
     position: relative;
 }
 
+.bubble:last-of-type {
+    margin-bottom: 1.5rem;
+}
+
 .bubble p {
     margin: 0;
 }
